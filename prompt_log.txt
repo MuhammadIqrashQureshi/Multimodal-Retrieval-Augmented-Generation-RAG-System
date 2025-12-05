@@ -1,0 +1,47 @@
+PROMPT ENGINEERING LOG
+==================================================
+
+ENTRY 1:
+Timestamp: 2025-11-25T02:00:56.233831
+Query: What are the requirements for final year projects?
+Strategy: cot
+Prompt Length: 2865 characters
+Prompt:
+
+        You are an expert document analyst. Based on the provided context from multiple documents, answer the user's question using step-by-step reasoning.
+
+        CONTEXT FROM DOCUMENTS:
+        TEXT CONTENT:
+--- Source: 1. Annual Report 2023-24.pdf - Page 67 ---
+Content: Department wise publications – Five Years Summary Departments 2019 2020 2021 2022 2023 Civil Engineering (Civ. E) Computer Science (CS) Electrical Engineering (EE) Management Sciences (FSM) Sciences & Humanities (S&H) G. Total CFD ISB KHI LHR PWR Civ. E FSM S&H
+Relevance Score: 0.452
+
+--- Source: 3. FYP-Handbook-2023.pdf - Page 50 ---
+Content: FAST-NUCES BS Final Year Project Handbook 2023 Evaluation: (please tick one) * Modiﬁcations (Minor/Major) Recommended (if any) * Reason for Rejection (mandatory, if any FYP is rejected)
+Relevance Score: 0.449
+
+--- Source: 3. FYP-Handbook-2023.pdf - Page 44 ---
+Content: FAST-NUCES BS Final Year Project Handbook 2023 9. FYP Report Contents There are two types of FYPs – R&D and development. Therefore, the basic contents for the two types of reports are given below as a guideline. A speciﬁc and tailored format according to an FYP's need is suggested by a supervisor. Development FYP Report Format 1. Introduction 2. Research on existing products 3. Project Vision 3.1. Problem Statement 3.2. Business Opportunity 3.3. Objectives 3.4. Project Scope 3.5. Constraints 3.6. Stakeholders Description 3.6.1. Stakeholders Summary 3.6.2. Key High Level Goals and Problems of Stakeholders 4. Software Requirement Speciﬁcations 4.1. List of Features 4.2. Functional Requirements 4.3. Non-Functional Requirements 5. Iteration Plan 6. Iteration 1 (all artifacts mentioned in Table 1a) 7. Iteration 2 (all artifacts mentioned in Table 1a) and so on … (for subsequent iterations) 8. Implementation Details (not the programming code but the algorithmic and procedural details especially related to the hidden/ backend algorithms that are not covered in the design) 9. User Manual
+Relevance Score: 0.445
+
+
+        QUESTION: What are the requirements for final year projects?
+
+        Think step by step:
+        1. First, analyze which parts of the context are relevant to the question
+        2. Then, extract key information, figures, and data points from the relevant sections
+        3. Next, synthesize the information from different sources and identify patterns
+        4. Finally, provide a comprehensive, well-structured answer that addresses all aspects of the question
+
+        If the context doesn't contain enough information to answer fully, acknowledge what information is available and what is missing.
+
+        Structure your answer with:
+        - Clear introduction
+        - Key findings with supporting evidence
+        - Reference to source documents and pages
+        - Conclusion summarizing the main points
+
+        ANSWER:
+        
+--------------------------------------------------
+
