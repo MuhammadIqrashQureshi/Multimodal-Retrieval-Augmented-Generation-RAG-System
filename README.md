@@ -36,6 +36,8 @@ Show source PDF page numbers
 Uses complete workflow and time taken to execute the query
 
 UI:
+
+
 <img width="296" height="285" alt="image" src="https://github.com/user-attachments/assets/67823917-cc00-4d2b-869a-fdcc70147b89" />
 
 
