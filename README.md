@@ -5,6 +5,7 @@ A complete Multimodal RAG pipeline capable of extracting, chunking, embedding, r
 This project presents a comprehensive Multimodal Retrieval-Augmented Generation (RAG) System designed for processing financial documents that contain both textual and visual information. The system integrates advanced NLP, computer vision, vector databases, and large language models to enable intelligent multimodal querying. It processes three financial-related PDF documents by extracting text, images, tables, charts, and visual elements, converting them into embeddings, and performing cross-modal retrieval. The system demonstrates high retrieval accuracy with a Precision@1 of 1.000 and Mean Average Precision (MAP) of 1.000, validating the effectiveness of the multimodal embedding and retrieval approach.
 
 **Features**
+
 **✔ Multimodal PDF Parsing**
 Extracts text, tables, images, bar charts, and graphs
 OCR support for images using EasyOCR
