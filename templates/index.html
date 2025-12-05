@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+        <h1>🔍 Multimodal RAG System</h1>
+        <p class="subtitle">Advanced Document Analysis with AI</p>
+    </header>
+
+    <div class="main-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>⚙️ System Configuration</h3>
+                <div class="status-card">
+                    <h4>System Status</h4>
+                    <div id="system-status">
+                        <div class="status-item">
+                            <span class="status-label">LLM:</span>
+                            <span id="llm-status" class="status-value">Loading...</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Embeddings:</span>
+                            <span id="embedding-status" class="status-value">Loading...</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Vector DB:</span>
+                            <span id="vector-db-status" class="status-value">Loading...</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Total Chunks:</span>
+                            <span id="chunk-count" class="status-value">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdfs-card">
+                    <h4>📚 Active Documents</h4>
+                    <ul id="active-pdfs"></ul>
+                </div>
+
+                <button id="clear-chat" class="btn-clear">🗑️ Clear Chat History</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="chat">💬 Chat Interface</button>
+                <button class="tab-button" data-tab="analytics">📊 System Analytics</button>
+                <button class="tab-button" data-tab="results">🔍 Raw Results</button>
+            </div>
+
+            <!-- Chat Tab -->
+            <div id="chat-tab" class="tab-content active">
+                <div class="chat-container">
+                    <div class="query-section">
+                        <h3>Chat with Your Documents</h3>
+                        <div class="input-group">
+                            <input type="text" id="query-input" 
+                                   placeholder="Ask about financial metrics, FYP requirements, or document content..." 
+                                   class="query-input">
+                            <button id="search-btn" class="btn-search">🔍 Search</button>
+                        </div>
+                        
+                        <div class="image-upload">
+                            <details>
+                                <summary>🖼️ Image-based Query (Optional)</summary>
+                                <input type="file" id="image-upload" accept="image/*">
+                                <div id="image-preview"></div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="chat-history" id="chat-history">
+                        <!-- Chat messages will appear here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Tab -->
+            <div id="analytics-tab" class="tab-content">
+                <div class="analytics-container">
+                    <h3>📊 System Performance Analytics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value" id="avg-search-time">0.00s</div>
+                            <div class="metric-label">Average Search Time</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="avg-gen-time">0.00s</div>
+                            <div class="metric-label">Average Generation Time</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="total-queries">0</div>
+                            <div class="metric-label">Total Queries Processed</div>
+                        </div>
+                    </div>
+
+                    <div class="visualization-section">
+                        <h4>🔧 Live System Dashboard</h4>
+                        <div id="pipeline-visualization" class="pipeline-viz"></div>
+                        
+                        <div class="charts-grid">
+                            <div id="similarity-chart" class="chart-container"></div>
+                            <div id="source-chart" class="chart-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Tab -->
+            <div id="results-tab" class="tab-content">
+                <div class="results-container">
+                    <h3>🔍 Raw Search Results & System Details</h3>
+                    <div class="results-section">
+                        <h4>Raw Search Results</h4>
+                        <pre id="raw-results" class="code-block">No data yet. Process a query first.</pre>
+                    </div>
+                    <div class="results-section">
+                        <h4>System Configuration</h4>
+                        <pre id="system-config" class="code-block">Loading system configuration...</pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Loading Spinner -->
+<div id="loading-spinner" class="loading-spinner" style="display: none;">
+    <div class="spinner"></div>
+    <p>🔍 Searching documents and generating answer...</p>
+</div>
+{% endblock %}
